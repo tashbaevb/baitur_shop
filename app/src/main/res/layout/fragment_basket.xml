@@ -1,0 +1,147 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp"
+        tools:context=".ui.dashboard.BasketFragment">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+            <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_width="36dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/btn_back"
+                    android:contentDescription="button_back"
+                    tools:ignore="TouchTargetSizeCheck"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Your personal basket:"
+                    android:layout_marginTop="30dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="#478BA2"
+                    android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_basket"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    tools:listitem="@layout/item_order"/>
+
+            <ImageView
+                    android:id="@+id/place_holder"
+                    android:layout_width="380dp"
+                    android:layout_height="177dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/choose"
+                    android:visibility="visible"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="12dp"
+            >
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_users_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#B9D4DB"
+                        android:hint="your name:"
+                        android:textColor="#478BA2"
+                        android:textColorHint="#478BA2"
+                        android:textStyle="bold"
+                        tools:ignore="TextContrastCheck"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edit_users_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="adress for delivery:"
+                        android:textColor="#478BA2"
+                        android:textColorLink="#478BA2"
+                        android:textStyle="bold"
+                        android:background="#B9D4DB"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Введите количесто: "/>
+
+                <EditText
+                        android:id="@+id/place_counter"
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:background="@color/teal_200"
+                        android:layout_marginLeft="8dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                <Button
+                        android:id="@+id/btn_make_order"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        app:cornerRadius="20dp"
+                        android:backgroundTint="#B9D4DB"
+                        android:layout_gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#478BA2"
+                        android:textStyle="bold"
+                        android:text="Оформить заказ"
+                        android:textAllCaps="false"/>
+
+                <Button
+                        android:id="@+id/btn_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        app:cornerRadius="20dp"
+                        android:backgroundTint="#B9D4DB"
+                        android:layout_marginLeft="30dp"
+                        android:layout_gravity="center_horizontal"
+                        android:textAlignment="center"
+                        android:textColor="#478BA2"
+                        android:text="pay"
+                        android:textAllCaps="false"
+                        android:visibility="invisible"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/tv_otvet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#478BA2"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

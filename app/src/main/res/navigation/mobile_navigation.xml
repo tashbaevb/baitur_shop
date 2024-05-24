@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@+id/navigation_home">
+
+    <fragment
+            android:id="@+id/navigation_home"
+            android:name="com.example.baitur.ui.home.HomeFragment"
+            android:label="@string/title_home"
+            tools:layout="@layout/fragment_home" >
+        <action
+                android:id="@+id/action_navigation_home_to_navigation_registr"
+                app:destination="@id/navigation_registr" />
+        <action
+                android:id="@+id/action_navigation_home_to_navigation_basket"
+                app:destination="@id/navigation_basket" />
+        <action
+                android:id="@+id/action_navigation_home_to_navigation_description"
+                app:destination="@id/navigation_description" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/navigation_basket"
+            android:name="com.example.baitur.ui.dashboard.BasketFragment"
+            android:label="@string/title_dashboard"
+            tools:layout="@layout/fragment_basket" >
+        <action
+                android:id="@+id/action_navigation_basket_to_navigation_payment"
+                app:destination="@id/navigation_payment" />
+        <action
+                android:id="@+id/action_navigation_basket_to_navigation_home"
+                app:destination="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/navigation_description"
+            android:name="com.example.baitur.ui.notifications.DescriptionFragment"
+            android:label="@string/title_notifications"
+            tools:layout="@layout/fragment_description" />
+    <fragment
+            android:id="@+id/navigation_login"
+            android:name="com.example.baitur.auth.LoginFragment"
+            android:label="fragment_login"
+            tools:layout="@layout/fragment_login" >
+        <action
+                android:id="@+id/action_navigation_login_to_navigation_home"
+                app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+            android:id="@+id/navigation_registr"
+            android:name="com.example.baitur.auth.RegistrationFragment"
+            android:label="fragment_registr"
+            tools:layout="@layout/fragment_registration" >
+        <action
+                android:id="@+id/action_navigation_registr_to_navigation_login"
+                app:destination="@id/navigation_login" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/navigation_payment"
+            android:name="com.example.baitur.ui.payment.PaymentFragment"
+            android:label="fragment_payment"
+            tools:layout="@layout/fragment_payment" >
+        <action
+                android:id="@+id/action_navigation_payment_to_navigation_home"
+                app:destination="@id/navigation_home" />
+    </fragment>
+</navigation>
