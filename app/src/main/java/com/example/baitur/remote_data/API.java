@@ -26,7 +26,7 @@ public interface API {
     @PATCH("product/{id}/")
     Call<ModelM> changeProductById();
 
-    @POST("account/register/")
+    @POST("account/register")
     Call<User> registrationNewUser(@Body User user);
 
     @POST("account/login")
